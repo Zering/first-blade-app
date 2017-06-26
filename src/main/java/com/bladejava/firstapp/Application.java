@@ -3,6 +3,7 @@ package com.bladejava.firstapp;
 import com.blade.Blade;
 import com.blade.Environment;
 import com.blade.event.EventType;
+import com.blade.kit.StringKit;
 import com.bladejava.firstapp.model.User;
 
 /**
@@ -15,8 +16,8 @@ public class Application {
         Blade.me().before("/*", ((request, response) -> {
             String uri = request.uri();
             if("/index".equals(uri)){
-                User user = request.session().attribute(Const.LOGIN_SESSION_KEY);
-                if (null == user) {
+                String username = request.session().attribute(Const.LOGIN_SESSION_KEY);
+                if (StringKit.isBlank(username)) {
                     response.redirect("/login");
                     return;
                 }

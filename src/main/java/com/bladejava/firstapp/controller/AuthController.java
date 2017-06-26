@@ -4,7 +4,6 @@ import com.blade.kit.StringKit;
 import com.blade.mvc.annotation.GetRoute;
 import com.blade.mvc.annotation.Path;
 import com.blade.mvc.annotation.PostRoute;
-import com.blade.mvc.annotation.QueryParam;
 import com.blade.mvc.http.Request;
 import com.blade.mvc.http.Response;
 import com.blade.mvc.http.Session;
@@ -50,7 +49,7 @@ public class AuthController {
             return "login.html";
         }
 
-        request.session().attribute(Const.LOGIN_SESSION_KEY, user);
+        request.session().attribute(Const.LOGIN_SESSION_KEY, user.getUsername());
 
         response.redirect("/index");
 
