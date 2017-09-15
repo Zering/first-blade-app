@@ -4,7 +4,6 @@ import com.blade.Blade;
 import com.blade.Environment;
 import com.blade.event.EventType;
 import com.blade.kit.StringKit;
-import com.bladejava.firstapp.model.User;
 
 /**
  * Hello world!
